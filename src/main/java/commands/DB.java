@@ -23,7 +23,6 @@ public class DB {
 			while (rs.next()) {
 				accessToken = new AccessToken(rs.getString("oauth"),
 						rs.getString("secret"));
-
 			}
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
