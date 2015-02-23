@@ -88,13 +88,12 @@ public class TwitterService {
 		}
 		
 		try {
-			tweetStatus = twitter.updateStatus("Test From Heroku"
-					+ System.currentTimeMillis());
+			tweetStatus = twitter.updateStatus("From mohan app" + System.currentTimeMillis());
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
 		if (tweetStatus != null)
-			return "Check your Twitter, your tweet has been posted:"
+			return "Please check your Twitter, your tweet has been posted:"
 					+ tweetStatus.getText();
 		else
 			return "BOO! didn't work";
@@ -120,13 +119,13 @@ public class TwitterService {
 			e1.printStackTrace();
 		}
 		try {
-			tweetStatus = twitter.updateStatus("Status Update from Heroku"
+			tweetStatus = twitter.updateStatus("Status update message from heroku "
 					+ System.currentTimeMillis());
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
 		if (tweetStatus != null)
-			return "Check your Twitter, your tweet has been posted:"
+			return "Please check your Twitter, your tweet has been posted: "
 					+ tweetStatus.getText();
 		else
 			return "BOO! didn't work";
