@@ -154,7 +154,7 @@ public class TwitterService {
 				accessToken = db.getOAuthToken(user, "twitter");
 				twitter.setOAuthAccessToken(accessToken);
 				
-				tweetStatus = twitter.updateStatus("Status update message from Mohan "
+				tweetStatus = twitter.updateStatus("Status update message for all the users from Mohan "
 						+ System.currentTimeMillis());
 			}
 		}catch (TwitterException e) {
