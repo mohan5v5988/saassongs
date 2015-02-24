@@ -1,5 +1,7 @@
 package services;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
@@ -15,7 +17,6 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import twitter4j.auth.RequestToken;
-
 import commands.DB;
 
 @Path("/twitter")
@@ -119,11 +120,48 @@ public class TwitterService {
 			e1.printStackTrace();
 		}
 		try {
-			tweetStatus = twitter.updateStatus("Status update message from heroku "
+			tweetStatus = twitter.updateStatus("Status update message from Mohan "
 					+ System.currentTimeMillis());
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
+		if (tweetStatus != null)
+			return "Please check your Twitter, your tweet has been posted: "
+					+ tweetStatus.getText();
+		else
+			return "BOO! didn't work";
+	}
+	
+	
+	
+	@GET
+	@Path("/postall")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String postAll() {
+		Twitter twitter = new TwitterFactory().getInstance();
+		Status tweetStatus = null;
+		AccessToken accessToken = null;
+		try {
+			twitter.setOAuthConsumer(consumerKey, consumerSecret);
+		} catch (Exception e) {
+			System.out.println("The OAuthConsumer has likely already been set");
+		}
+		
+		try {
+			DB db = new DB();
+			ArrayList<String> Users = db.getUserNames();
+			for(String user : Users) {
+				accessToken = db.getOAuthToken(user, "twitter");
+				twitter.setOAuthAccessToken(accessToken);
+				
+				tweetStatus = twitter.updateStatus("Status update message from Mohan "
+						+ System.currentTimeMillis());
+			}
+		}catch (TwitterException e) {
+			e.printStackTrace();
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		} 
 		if (tweetStatus != null)
 			return "Please check your Twitter, your tweet has been posted: "
 					+ tweetStatus.getText();
