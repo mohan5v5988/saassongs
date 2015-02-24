@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 connectionprovider/ConnectionProvider.class
 services/TwitterService.class
 commands/DB.class
 launch/Main.class
+=======
+model/Song.class
+command/ListSongsCommand.class
+connectionprovider/ConnectionProvider.class
+command/UpdateSongCommand.class
+util/Constants.class
+services/Services.class
+util/Constants$Pagination.class
+launch/Main.class
+command/GetSongCommand.class
+command/CreateSongCommand.class
+>>>>>>> a1f65466b1651dc1ea400c84f9ceb5a7cf30f7b3

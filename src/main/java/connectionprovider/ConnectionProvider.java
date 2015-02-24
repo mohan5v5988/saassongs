@@ -34,9 +34,22 @@ public class ConnectionProvider {
 		try {
 			Connection connection = getConnection();
 			Statement stmt = connection.createStatement();
+<<<<<<< HEAD
 			ResultSet rs = stmt.executeQuery("SELECT * FROM TOKENS");
 			while (rs.next()) {
 				System.out.println("Thing: " + rs.getString("username"));
+=======
+			//stmt.executeUpdate("INSERT INTO GOODS(THING) VALUES('My cool Item');");
+			ResultSet rs = stmt.executeQuery("SELECT title FROM SONGS");
+			//ResultSet rsa = stmt.executeQuery("SELECT artist FROM SONGS");
+			//ResultSet rsid = stmt.executeQuery("SELECT id FROM SONGS");
+			while (rs.next()) {
+				System.out.println("title: " + rs.getString("title"));
+			}
+			System.out.println("hi");
+			while (rs.next()) {
+				System.out.println("title: " + rs.getString("title"));
+>>>>>>> a1f65466b1651dc1ea400c84f9ceb5a7cf30f7b3
 			}
 		} catch (URISyntaxException e) {
 			e.printStackTrace();

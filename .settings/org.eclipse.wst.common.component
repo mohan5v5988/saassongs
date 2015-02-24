@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="Saasoauth">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <property name="context-root" value="Saasoauth"/>
         <property name="java-output-path" value="/Saasoauth/build/classes"/>
+=======
+    <wb-module deploy-name="Saassongs">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <property name="context-root" value="Saassongs"/>
+        <property name="java-output-path" value="/Saassongs/build/classes"/>
+>>>>>>> a1f65466b1651dc1ea400c84f9ceb5a7cf30f7b3
     </wb-module>
 </project-modules>
